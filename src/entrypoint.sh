@@ -1,5 +1,6 @@
 #!/bin/bash
-
+echo "Starting container ..."
+echo "Setup phase ..."
 set -m
 
 # Add elasticsearch as command if needed
@@ -27,7 +28,10 @@ else
 	$@ &
 fi
 
+echo "Starting phase ..."
 /run/miscellaneous/wait_until_started.sh
+
+echo "Setitng users and indexes..."
 /run/miscellaneous/index_level_settings.sh
 
 /run/auth/users.sh
