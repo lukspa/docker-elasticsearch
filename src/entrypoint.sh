@@ -34,7 +34,10 @@ echo "Starting phase ..."
 echo "Setitng users and indexes..."
 /run/miscellaneous/index_level_settings.sh
 
+echo "Setitng users ..."
 /run/auth/users.sh
+
+echo "Setitng certificates ..."
 /run/auth/sgadmin.sh
 
 fg
